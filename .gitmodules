@@ -1,0 +1,9 @@
+[submodule "Modules"]
+	path = Modules
+	url = https://github.com/usnistgov/NistPluggableModules.git
+[submodule "LV_Config"]
+	path = LV_Config
+	url = https://github.com/usnistgov/LV_Config_class
+[submodule "LV_Ini"]
+	path = LV_Ini
+	url = https://github.com/usnistgov/LV_Ini.git
