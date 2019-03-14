@@ -19,6 +19,7 @@
 				<Item Name="ObtainUserEvents.vi" Type="VI" URL="../Framework/UserEvents/ObtainUserEvents.vi"/>
 				<Item Name="StopEvent.vi" Type="VI" URL="../Framework/UserEvents/StopEvent.vi"/>
 			</Item>
+			<Item Name="BusEvents.vi" Type="VI" URL="../Framework/BusEvents.vi"/>
 			<Item Name="CntrlRefs.ctl" Type="VI" URL="../Framework/CntrlRefs.ctl"/>
 			<Item Name="GetCntrlRefs.vi" Type="VI" URL="../Framework/GetCntrlRefs.vi"/>
 		</Item>
@@ -593,6 +594,8 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
+			<Item Name="matscript.dll" Type="Document"/>
+			<Item Name="MCStatic_33557714032_8334a53145727201e100f6a0690014be.vi" Type="VI" URL="/C/Users/PowerLab/Documents/LabVIEW Data/MathScriptVIs/MCStatic_33557714032_8334a53145727201e100f6a0690014be.vi"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
