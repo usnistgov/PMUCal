@@ -594,7 +594,6 @@
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
-			<Item Name="matscript.dll" Type="Document"/>
 			<Item Name="MCStatic_33557714032_8334a53145727201e100f6a0690014be.vi" Type="VI" URL="/C/Users/PowerLab/Documents/LabVIEW Data/MathScriptVIs/MCStatic_33557714032_8334a53145727201e100f6a0690014be.vi"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
