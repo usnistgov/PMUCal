@@ -19,6 +19,7 @@
 				<Item Name="ObtainUserEvents.vi" Type="VI" URL="../Framework/UserEvents/ObtainUserEvents.vi"/>
 				<Item Name="StopEvent.vi" Type="VI" URL="../Framework/UserEvents/StopEvent.vi"/>
 			</Item>
+			<Item Name="AddLogMsg.vi" Type="VI" URL="../Framework/AddLogMsg.vi"/>
 			<Item Name="BusEvents.vi" Type="VI" URL="../Framework/BusEvents.vi"/>
 			<Item Name="CntrlRefs.ctl" Type="VI" URL="../Framework/CntrlRefs.ctl"/>
 			<Item Name="GetCntrlRefs.vi" Type="VI" URL="../Framework/GetCntrlRefs.vi"/>
@@ -101,6 +102,7 @@
 				<Item Name="_clkDisc_niSync_advancedAttribute_set_f64.vi" Type="VI" URL="/&lt;userlib&gt;/mdevClkDisc/mdevClkDisc.llb/_clkDisc_niSync_advancedAttribute_set_f64.vi"/>
 				<Item Name="_clkDisc_niSync_advancedAttribute_set_i32.vi" Type="VI" URL="/&lt;userlib&gt;/mdevClkDisc/mdevClkDisc.llb/_clkDisc_niSync_advancedAttribute_set_i32.vi"/>
 				<Item Name="_clkDisc_niSync_advancedAttributes.ctl" Type="VI" URL="/&lt;userlib&gt;/mdevClkDisc/mdevClkDisc.llb/_clkDisc_niSync_advancedAttributes.ctl"/>
+				<Item Name="_clkDisc_servo_adjustFrequency.vi" Type="VI" URL="/&lt;userlib&gt;/mdevClkDisc/mdevClkDisc.llb/_clkDisc_servo_adjustFrequency.vi"/>
 				<Item Name="_clkDisc_servo_adjustOscVoltage.vi" Type="VI" URL="/&lt;userlib&gt;/mdevClkDisc/mdevClkDisc.llb/_clkDisc_servo_adjustOscVoltage.vi"/>
 				<Item Name="_clkDisc_servo_adjustPhase.vi" Type="VI" URL="/&lt;userlib&gt;/mdevClkDisc/mdevClkDisc.llb/_clkDisc_servo_adjustPhase.vi"/>
 				<Item Name="_clkDisc_servo_adjustTime.vi" Type="VI" URL="/&lt;userlib&gt;/mdevClkDisc/mdevClkDisc.llb/_clkDisc_servo_adjustTime.vi"/>
