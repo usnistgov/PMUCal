@@ -584,8 +584,6 @@
 				<Item Name="Wait at Rendezvous.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/rendezvs.llb/Wait at Rendezvous.vi"/>
 				<Item Name="whitespace.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/whitespace.ctl"/>
 			</Item>
-			<Item Name="clEvents.ctl" Type="VI" URL="../Modules/FGen/FgenPlugins/DaqMx_Single/Private/clEvents.ctl"/>
-			<Item Name="EventType.ctl" Type="VI" URL="../Modules/FGen/FgenPlugins/DaqMx_Single/Private/EventType.ctl"/>
 			<Item Name="ivi.dll" Type="Document" URL="ivi.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
