@@ -20,7 +20,6 @@
 				<Item Name="StopEvent.vi" Type="VI" URL="../Framework/UserEvents/StopEvent.vi"/>
 			</Item>
 			<Item Name="AddLogMsg.vi" Type="VI" URL="../Framework/AddLogMsg.vi"/>
-			<Item Name="BusEvents.vi" Type="VI" URL="../Framework/BusEvents.vi"/>
 			<Item Name="CntrlRefs.ctl" Type="VI" URL="../Framework/CntrlRefs.ctl"/>
 			<Item Name="GetCntrlRefs.vi" Type="VI" URL="../Framework/GetCntrlRefs.vi"/>
 		</Item>
@@ -52,12 +51,16 @@
 			<Item Name="TestClass" Type="Folder">
 				<Item Name="Test.lvclass" Type="LVClass" URL="../Modules/TestClass/Test.lvclass"/>
 			</Item>
+			<Item Name="Visualize" Type="Folder">
+				<Item Name="Visualization.lvlib" Type="Library" URL="../Modules/Visualization/Visualization.lvlib"/>
+			</Item>
 		</Item>
 		<Item Name="Package" Type="Folder"/>
 		<Item Name="Config_class.lvlib" Type="Library" URL="../LV_Config/Config_class.lvlib"/>
 		<Item Name="Ini_lib.lvlib" Type="Library" URL="../LV_Ini/Ini_lib.lvlib"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Queue.lvlib" Type="Library" URL="../Framework/Queue/Queue.lvlib"/>
+		<Item Name="WfrmModule.lvlib" Type="Library" URL="../Modules/WfrmGenerator/WfrmModule/WfrmModule.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="instr.lib" Type="Folder">
 				<Item Name="niSync Clear Clock.vi" Type="VI" URL="/&lt;instrlib&gt;/niSync/niSync.llb/niSync Clear Clock.vi"/>
@@ -574,6 +577,7 @@
 				<Item Name="NI_Matrix.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/Matrix/NI_Matrix.lvlib"/>
 				<Item Name="NI_PackedLibraryUtility.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/LVLibp/NI_PackedLibraryUtility.lvlib"/>
 				<Item Name="NI_PtbyPt.lvlib" Type="Library" URL="/&lt;vilib&gt;/ptbypt/NI_PtbyPt.lvlib"/>
+				<Item Name="nisyscfg.lvlib" Type="Library" URL="/&lt;vilib&gt;/nisyscfg/nisyscfg.lvlib"/>
 				<Item Name="Not A Rendezvous.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/rendezvs.llb/Not A Rendezvous.vi"/>
 				<Item Name="Not Found Dialog.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Not Found Dialog.vi"/>
 				<Item Name="Release Waiting Procs.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/rendezvs.llb/Release Waiting Procs.vi"/>
@@ -619,6 +623,9 @@
 			<Item Name="IviFgen.dll" Type="Document" URL="IviFgen.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="kernel32.dll" Type="Document" URL="kernel32.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
 			<Item Name="lvanlys.dll" Type="Document" URL="/&lt;resource&gt;/lvanlys.dll"/>
 			<Item Name="matscript.dll" Type="Document"/>
 			<Item Name="nilvaiu.dll" Type="Document" URL="nilvaiu.dll">
@@ -627,6 +634,10 @@
 			<Item Name="niSync.dll" Type="Document" URL="niSync.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="nisyscfg.dll" Type="Document" URL="nisyscfg.dll">
+				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
+			</Item>
+			<Item Name="WfrmPlugins.lvlib" Type="Library" URL="../Modules/WfrmGenerator/WfrmPlugins/WfrmPlugins.lvlib"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
