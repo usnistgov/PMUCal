@@ -22,6 +22,7 @@
 			<Item Name="AddLogMsg.vi" Type="VI" URL="../Framework/AddLogMsg.vi"/>
 			<Item Name="CntrlRefs.ctl" Type="VI" URL="../Framework/CntrlRefs.ctl"/>
 			<Item Name="GetCntrlRefs.vi" Type="VI" URL="../Framework/GetCntrlRefs.vi"/>
+			<Item Name="TestBed.vi" Type="VI" URL="../Framework/TestBed.vi"/>
 		</Item>
 		<Item Name="Modules" Type="Folder">
 			<Item Name="Analysis" Type="Folder">
