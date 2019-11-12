@@ -62,6 +62,11 @@
 		</Item>
 		<Item Name="Package" Type="Folder"/>
 		<Item Name="TestAutomation" Type="Folder">
+			<Item Name="Examples" Type="Folder" URL="../LV_TestAutomation/Examples">
+				<Property Name="NI.DISK" Type="Bool">true</Property>
+			</Item>
+			<Item Name="Comms.lvlib" Type="Library" URL="../LV_TestAutomation/Comms_lib/Comms.lvlib"/>
+			<Item Name="LTA.lvlib" Type="Library" URL="../LV_TestAutomation/LTA_Lib/LTA.lvlib"/>
 			<Item Name="LV-PY.lvlib" Type="Library" URL="../LV_TestAutomation/LV-PY_Lib/LV-PY.lvlib"/>
 		</Item>
 		<Item Name="UserFiles" Type="Folder" URL="../UserFiles">
@@ -709,8 +714,11 @@
 				<Item Name="Write To Spreadsheet File (string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File (string).vi"/>
 				<Item Name="Write To Spreadsheet File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/file.llb/Write To Spreadsheet File.vi"/>
 			</Item>
+			<Item Name="_ChannelSupport.lvlib" Type="Library" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/_ChannelSupport.lvlib"/>
 			<Item Name="AcPwrModule.lvlib" Type="Library" URL="../Modules/AcPwr/AcPwrModule/AcPwrModule.lvlib"/>
 			<Item Name="AcPwrPlugins.lvlib" Type="Library" URL="../Modules/AcPwr/AcPwrPlugins/AcPwrPlugins.lvlib"/>
+			<Item Name="ChannelProbePositionAndTitle.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbePositionAndTitle.vi"/>
+			<Item Name="ChannelProbeWindowStagger.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbeWindowStagger.vi"/>
 			<Item Name="ivi.dll" Type="Document" URL="ivi.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -752,6 +760,7 @@
 			</Item>
 			<Item Name="ScopeModule.lvlib" Type="Library" URL="../Modules/Scope/ScopeModule/ScopeModule.lvlib"/>
 			<Item Name="ScopePlugins.lvlib" Type="Library" URL="../Modules/Scope/ScopePlugins/ScopePlugins.lvlib"/>
+			<Item Name="Tag-bool.lvlib" Type="Library" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-bool.lvlib"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
 	</Item>
