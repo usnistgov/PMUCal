@@ -1,6 +1,7 @@
 ﻿<?xml version='1.0' encoding='UTF-8'?>
 <Project Type="Project" LVVersion="18008000">
 	<Property Name="NI.LV.All.SourceOnly" Type="Bool">true</Property>
+	<Property Name="NI.Project.Description" Type="Str"></Property>
 	<Item Name="My Computer" Type="My Computer">
 		<Property Name="mathScriptPath" Type="Str"></Property>
 		<Property Name="server.app.propertiesEnabled" Type="Bool">true</Property>
@@ -72,7 +73,7 @@
 		<Item Name="UserFiles" Type="Folder" URL="../UserFiles">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
-		<Item Name="Config_class.lvlib" Type="Library" URL="../LV_Config/Config_class.lvlib"/>
+		<Item Name="Config_class.lvlib" Type="Library" URL="../LV_Config_class/Config_class.lvlib"/>
 		<Item Name="Ini_lib.lvlib" Type="Library" URL="../LV_Ini/Ini_lib.lvlib"/>
 		<Item Name="kill_modal_dlg.vi" Type="VI" URL="/C/Users/PowerLabNI3/Desktop/kill_modal_dlg.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
@@ -719,6 +720,11 @@
 			<Item Name="AcPwrPlugins.lvlib" Type="Library" URL="../Modules/AcPwr/AcPwrPlugins/AcPwrPlugins.lvlib"/>
 			<Item Name="ChannelProbePositionAndTitle.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbePositionAndTitle.vi"/>
 			<Item Name="ChannelProbeWindowStagger.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbeWindowStagger.vi"/>
+			<Item Name="Config.ctl" Type="VI" URL="../LV_Config/Config.lvclass/Config.ctl"/>
+			<Item Name="Config.lvclass" Type="LVClass" URL="../LV_Config/Config.lvclass"/>
+			<Item Name="Create.vi" Type="VI" URL="../LV_Config/Public/Create.vi"/>
+			<Item Name="eLogLvl.ctl" Type="VI" URL="../LV_Config/Typedefs/eLogLvl.ctl"/>
+			<Item Name="GetSetConfigClass.vi" Type="VI" URL="../LV_Config/Public/GetSetConfigClass.vi"/>
 			<Item Name="ivi.dll" Type="Document" URL="ivi.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -758,8 +764,12 @@
 			<Item Name="niTClk.dll" Type="Document" URL="niTClk.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Read ConfigFilePath.vi" Type="VI" URL="../LV_Config/Accessors/Read ConfigFilePath.vi"/>
+			<Item Name="Read Logging.vi" Type="VI" URL="../LV_Config/Accessors/Read Logging.vi"/>
+			<Item Name="Read Root Directory.vi" Type="VI" URL="../LV_Config/Accessors/Read Root Directory.vi"/>
 			<Item Name="ScopeModule.lvlib" Type="Library" URL="../Modules/Scope/ScopeModule/ScopeModule.lvlib"/>
 			<Item Name="ScopePlugins.lvlib" Type="Library" URL="../Modules/Scope/ScopePlugins/ScopePlugins.lvlib"/>
+			<Item Name="Settings.vi" Type="VI" URL="../LV_Config/Public/Settings.vi"/>
 			<Item Name="Tag-bool.lvlib" Type="Library" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-bool.lvlib"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
