@@ -720,11 +720,6 @@
 			<Item Name="AcPwrPlugins.lvlib" Type="Library" URL="../Modules/AcPwr/AcPwrPlugins/AcPwrPlugins.lvlib"/>
 			<Item Name="ChannelProbePositionAndTitle.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbePositionAndTitle.vi"/>
 			<Item Name="ChannelProbeWindowStagger.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbeWindowStagger.vi"/>
-			<Item Name="Config.ctl" Type="VI" URL="../LV_Config/Config.lvclass/Config.ctl"/>
-			<Item Name="Config.lvclass" Type="LVClass" URL="../LV_Config/Config.lvclass"/>
-			<Item Name="Create.vi" Type="VI" URL="../LV_Config/Public/Create.vi"/>
-			<Item Name="eLogLvl.ctl" Type="VI" URL="../LV_Config/Typedefs/eLogLvl.ctl"/>
-			<Item Name="GetSetConfigClass.vi" Type="VI" URL="../LV_Config/Public/GetSetConfigClass.vi"/>
 			<Item Name="ivi.dll" Type="Document" URL="ivi.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -764,12 +759,8 @@
 			<Item Name="niTClk.dll" Type="Document" URL="niTClk.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
-			<Item Name="Read ConfigFilePath.vi" Type="VI" URL="../LV_Config/Accessors/Read ConfigFilePath.vi"/>
-			<Item Name="Read Logging.vi" Type="VI" URL="../LV_Config/Accessors/Read Logging.vi"/>
-			<Item Name="Read Root Directory.vi" Type="VI" URL="../LV_Config/Accessors/Read Root Directory.vi"/>
 			<Item Name="ScopeModule.lvlib" Type="Library" URL="../Modules/Scope/ScopeModule/ScopeModule.lvlib"/>
 			<Item Name="ScopePlugins.lvlib" Type="Library" URL="../Modules/Scope/ScopePlugins/ScopePlugins.lvlib"/>
-			<Item Name="Settings.vi" Type="VI" URL="../LV_Config/Public/Settings.vi"/>
 			<Item Name="Tag-bool.lvlib" Type="Library" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-bool.lvlib"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
