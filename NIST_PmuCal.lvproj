@@ -39,6 +39,86 @@
 				<Item Name="DigitizerPlugins.lvlib" Type="Library" URL="../Modules/Digitizer/DigitizerPlugins/DigitizerPlugins.lvlib"/>
 			</Item>
 			<Item Name="Doc" Type="Folder">
+				<Item Name="source" Type="Folder">
+					<Item Name="images" Type="Folder">
+						<Item Name="AcPwr" Type="Folder">
+							<Item Name="AcPwrBaseClass Spec.vsdx" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/AcPwrBaseClass Spec.vsdx"/>
+							<Item Name="ChromaAcLoad Spec.vsdx" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/ChromaAcLoad Spec.vsdx"/>
+							<Item Name="image0.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/image0.png"/>
+							<Item Name="image1.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/image1.png"/>
+							<Item Name="image2.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/image2.png"/>
+							<Item Name="Nh9400ConfigSync.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9400ConfigSync.PNG"/>
+							<Item Name="Nh9400ModeTable.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9400ModeTable.PNG"/>
+							<Item Name="Nh9400SetRmtLckt.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9400SetRmtLckt.PNG"/>
+							<Item Name="Nh9400Table16Modes.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9400Table16Modes.PNG"/>
+							<Item Name="Nh9410Mode0Limits.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9410Mode0Limits.PNG"/>
+							<Item Name="Nh9410Mode1Limits.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9410Mode1Limits.PNG"/>
+							<Item Name="Nh9410Mode2Limits.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9410Mode2Limits.PNG"/>
+							<Item Name="Nh9410Mode3Limits.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9410Mode3Limits.PNG"/>
+							<Item Name="Nh9410Mode4Limits.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9410Mode4Limits.PNG"/>
+							<Item Name="Nh9410Mode5Limits.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9410Mode5Limits.PNG"/>
+							<Item Name="Nh9410Mode6Limits.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9410Mode6Limits.PNG"/>
+							<Item Name="Nh9410Mode7Limits.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9410Mode7Limits.PNG"/>
+							<Item Name="Nh9410SimpleModeTable.PNG" Type="Document" URL="../Modules/doc/sphinx/source/images/AcPwr/Nh9410SimpleModeTable.PNG"/>
+						</Item>
+						<Item Name="AppendixA" Type="Folder">
+							<Item Name="image1.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image1.png"/>
+							<Item Name="image2.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image2.png"/>
+							<Item Name="image3.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image3.png"/>
+							<Item Name="image4.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image4.png"/>
+							<Item Name="image5.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image5.png"/>
+							<Item Name="image6.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image6.png"/>
+							<Item Name="image7.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image7.png"/>
+							<Item Name="image8.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image8.png"/>
+							<Item Name="image9.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image9.png"/>
+							<Item Name="image10.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image10.png"/>
+							<Item Name="image11.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image11.png"/>
+							<Item Name="image12.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image12.png"/>
+							<Item Name="image13.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image13.png"/>
+							<Item Name="image14.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image14.png"/>
+							<Item Name="image15.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image15.png"/>
+							<Item Name="image16.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image16.png"/>
+							<Item Name="image17.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image17.png"/>
+							<Item Name="image18.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image18.png"/>
+							<Item Name="image19.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image19.png"/>
+							<Item Name="image20.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image20.png"/>
+							<Item Name="image21.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image21.png"/>
+							<Item Name="image22.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image22.png"/>
+							<Item Name="image23.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image23.png"/>
+							<Item Name="image24.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image24.png"/>
+							<Item Name="image25.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image25.png"/>
+							<Item Name="image26.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image26.png"/>
+							<Item Name="image27.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image27.png"/>
+							<Item Name="image28.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image28.png"/>
+							<Item Name="image29.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image29.png"/>
+							<Item Name="image30.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image30.png"/>
+							<Item Name="image31.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image31.png"/>
+							<Item Name="image32.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image32.png"/>
+							<Item Name="image33.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image33.png"/>
+							<Item Name="image34.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image34.png"/>
+							<Item Name="image35.png" Type="Document" URL="../Modules/doc/sphinx/source/images/AppendixA/image35.png"/>
+						</Item>
+						<Item Name="SpecAn" Type="Folder">
+							<Item Name="image0.png" Type="Document" URL="../Modules/doc/sphinx/source/images/SpecAn/image0.png"/>
+							<Item Name="image1.png" Type="Document" URL="../Modules/doc/sphinx/source/images/SpecAn/image1.png"/>
+							<Item Name="image2.png" Type="Document" URL="../Modules/doc/sphinx/source/images/SpecAn/image2.png"/>
+							<Item Name="image3.png" Type="Document" URL="../Modules/doc/sphinx/source/images/SpecAn/image3.png"/>
+							<Item Name="image4.png" Type="Document" URL="../Modules/doc/sphinx/source/images/SpecAn/image4.png"/>
+							<Item Name="image5.png" Type="Document" URL="../Modules/doc/sphinx/source/images/SpecAn/image5.png"/>
+							<Item Name="ImageSource.vsdx" Type="Document" URL="../Modules/doc/sphinx/source/images/SpecAn/ImageSource.vsdx"/>
+						</Item>
+					</Item>
+					<Item Name="AcPwr.rst" Type="Document" URL="../Modules/doc/sphinx/source/AcPwr.rst"/>
+					<Item Name="AcPwrModule.rst" Type="Document" URL="../Modules/doc/sphinx/source/AcPwrModule.rst"/>
+					<Item Name="conf.py" Type="Document" URL="../Modules/doc/sphinx/source/conf.py"/>
+					<Item Name="GettingStarted.rst" Type="Document" URL="../Modules/doc/sphinx/source/GettingStarted.rst"/>
+					<Item Name="index.rst" Type="Document" URL="../Modules/doc/sphinx/source/index.rst"/>
+					<Item Name="introduction.rst" Type="Document" URL="../Modules/doc/sphinx/source/introduction.rst"/>
+					<Item Name="moduleAppendix.rst" Type="Document" URL="../Modules/doc/sphinx/source/moduleAppendix.rst"/>
+					<Item Name="NhRegenGridSim.rst" Type="Document" URL="../Modules/doc/sphinx/source/NhRegenGridSim.rst"/>
+					<Item Name="SpecAn.rst" Type="Document" URL="../Modules/doc/sphinx/source/SpecAn.rst"/>
+					<Item Name="TestClass.rst" Type="Document" URL="../Modules/doc/sphinx/source/TestClass.rst"/>
+				</Item>
 				<Item Name="errors.rst" Type="Document" URL="../Modules/doc/sphinx/source/errors.rst"/>
 			</Item>
 			<Item Name="FGen" Type="Folder">
