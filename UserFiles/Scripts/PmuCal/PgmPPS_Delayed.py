@@ -2,7 +2,6 @@
 from lta import Lta
 import sys
 from lta_err import Lta_Error
-import numpy as np
 import time
 
 #------------------- following code must be in all scripts--------------------
@@ -15,17 +14,10 @@ try:
     freq_list = [5000, 2000, 1000, 500, 200, 100, 50]    
 
     for freq in freq_list:    
-        dlyTime = -.150    
-
- 
-        AnalysisConfig = lta.__get__('Analysis.Config')
-        AnalysisConfig[None]['F0'] = np.uint32(freq)
-        lta.__set__('Analysis.Config',AnalysisConfig)
-
-        # after setting the clock properties, the Sync module becomes unlocked.  Wait until it re-locks
+        dlyTime = -.300    # microseconds
 
         
-        while (dlyTime <= .175):
+        while (dlyTime < .325):
 
             ClkProperties=lta.__get__('Sync.ClockProperties')
             for element in ClkProperties[None]:
@@ -36,7 +28,7 @@ try:
 
             timeout = 5        
             while(timeout > 0): 
-                time.sleep(1)
+                time.sleep(10)
                 locked = lta.__get__('Sync.LockStatus')
                 print dlyTime
                 if locked[None] == True:
