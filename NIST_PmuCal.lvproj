@@ -129,6 +129,7 @@
 			<Item Name="Sensor" Type="Folder">
 				<Item Name="SensorModule.lvlib" Type="Library" URL="../Modules/Sensor/SensorModule/SensorModule.lvlib"/>
 				<Item Name="SensorPlugins.lvlib" Type="Library" URL="../Modules/Sensor/SensorPlugins/SensorPlugins.lvlib"/>
+				<Item Name="SensorShared.lvlib" Type="Library" URL="../Modules/Sensor/SensorShared/SensorShared.lvlib"/>
 			</Item>
 			<Item Name="Sync" Type="Folder">
 				<Item Name="SyncModule.lvlib" Type="Library" URL="../Modules/Sync/SyncModule/SyncModule.lvlib"/>
@@ -761,7 +762,6 @@
 			</Item>
 			<Item Name="ScopeModule.lvlib" Type="Library" URL="../Modules/Scope/ScopeModule/ScopeModule.lvlib"/>
 			<Item Name="ScopePlugins.lvlib" Type="Library" URL="../Modules/Scope/ScopePlugins/ScopePlugins.lvlib"/>
-			<Item Name="SensorShared.lvlib" Type="Library" URL="../Modules/Sensor/SensorShared/SensorShared.lvlib"/>
 			<Item Name="Tag-bool.lvlib" Type="Library" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-bool.lvlib"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
