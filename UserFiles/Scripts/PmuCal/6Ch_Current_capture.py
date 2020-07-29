@@ -3,7 +3,7 @@ from lta import Lta
 import sys
 from lta_err import Lta_Error
 import time
-import math
+#import math
 
 #------------------- following code must be in all scripts--------------------
 lta = Lta("127.0.0.1",60100)    # all scripts must create  an Lta object

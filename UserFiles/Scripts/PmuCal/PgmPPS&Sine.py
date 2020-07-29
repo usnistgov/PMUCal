@@ -22,13 +22,13 @@ try:
 
 
     #freq_list = [5000, 2000, 1000, 500, 200, 100, 50] 
-    freq_list=[5000]   
+    freq_list=[5000, 2000, 1000, 500, 200, 100, 80, 60, 50, 40]   
 
     for freq in freq_list:    
-        dlyTime = -2.    # microseconds
+#        dlyTime = -2.    # microseconds
         
 #        
-        while (dlyTime < 2.125):
+#        while (dlyTime < 2.125):
             
 #            sleepTime = 5
 #            while (sleepTime > 0):
@@ -38,18 +38,20 @@ try:
             
 
             
-            print 'freq',freq,'delay:',dlyTime,'us'
+#            print 'freq',freq,'delay:',dlyTime,'us'
+            print 'freq',freq,
+
             
             time.sleep(2.5) 
 
             
             fcnParams = lta.__get__('FGen.FunctionParams')  # get the array of signal parameters
             # calculate the phase based on the frequency and the delay
-            newPhase = -360*freq*dlyTime*1e-6 #- 360*freq*245*1e-9 #- 360*freq*293*1e-9
+#            newPhase = -360*freq*dlyTime*1e-6 #- 360*freq*245*1e-9 #- 360*freq*293*1e-9
     
             for param in fcnParams[None]:
                 param[frequency] = float(freq)
-                param[phase] = float(newPhase)
+#                param[phase] = float(newPhase)
                 
             lta.__set__('FGen.FunctionParams',fcnParams)
             
@@ -75,7 +77,7 @@ try:
             if locked[None] != True:
                 raise Exception ('Sync module is not locked')
                 
-            dlyTime = dlyTime + 0.125
+#            dlyTime = dlyTime + 0.125
 
 
 #------------------all scripts should send their errors to labview------------
