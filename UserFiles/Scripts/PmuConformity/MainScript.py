@@ -102,7 +102,7 @@ class StdTests(object):
         if self.PMUclass != 'M':
             range = 2
             
-        incr = 0.1  #frequency increment
+        incr = 1  #frequency increment
         Fin = 1     # index to the frequency parameters
         
         freq = self.Config['F0'] - range
@@ -132,6 +132,45 @@ class StdTests(object):
                              
         except Exception as ex:
             raise type(ex) ("Frequency Range Test Failure:"+ex.message)
+            
+            
+# Step Changes
+    def Step(self):
+        print("Performing Step Chage Tests")
+        
+        stepTime = 1;
+        incr = .1/self.Config['F0']
+        iteration = 10 
+
+        try:        
+            try: 
+                self.set_init()
+                params = lta.__get__('FGen.FunctionArbs')  
+                #print params['FunctionConfig']['SampleRate']
+                
+            except Exception as ex:
+                raise type(ex) ("Step Change Test Failure:"+ex.message)
+                
+                
+            while iteration > 0:
+                print ('iterations remaining = ', iteration )
+                params['FunctionConfig']['T0'] = -float(stepTime)
+                try: 
+                    Error = lta.__set__('FGen.FunctionArbs',params)
+                    lta.s.settimeout(200)
+                    Error = lta.__multirun__(self.ntries,self.secwait,self.ecode)
+                    lta.s.settimeout(10)                       
+                except Exception as ex:
+                    print (Error)
+                    raise type(ex)(str(iteration)+ex.message) 
+                    
+                stepTime += incr
+                iteration += -1
+                
+        except Exception as ex:
+            raise type(ex) ("Step Change Test Failure:"+ex.message)
+                
+           
 
 # ------------------ MAIN SCRIPT ---------------------------------------------
 #------------------- following code must be in all scripts--------------------
@@ -174,13 +213,12 @@ try:
     
     
     #list of tests to be performed
-    func_list = [#t.Magnitude, 
+    func_list = [#t.FreqRange,
+                 #t.Magnitude, 
                  #t.Harm, 
-                 t.FreqRange
-                 #t.OutOfBand,
                  #t.MeasBand, 
                  #t.RampFreq, 
-                 #t.StepChanges, 
+                 t.Step 
                  #t.RepLatency
                  ]     
 
