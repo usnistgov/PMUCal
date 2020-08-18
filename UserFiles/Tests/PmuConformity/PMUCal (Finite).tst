@@ -20,4 +20,4 @@ btnHideMods = "TRUE"
 Test Script = "PmuConformity\\MainScript.py"
 
 [Test File]
-Test File = "PMUCal (Finite).tst"
+Test File = "PmuConformity\\PMUCal (Finite).tst"
