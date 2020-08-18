@@ -141,12 +141,21 @@ class StdTests(object):
         stepTime = 1;
         incr = .1/self.Config['F0']
         iteration = 10 
+        KaS = 12; KxS = 13  #index to step parameters
+        magAmpl = 0.1
+        angleAmpl = 10
+        self.Duration = float(2)
 
         try:        
             try: 
-                self.set_init()
+                self.set_init()     # default function parameters
+                
+                # Step index                    
+                params = lta.__get__('FGen.FunctionParams')
+                params[None][KaS][:] = float(magAmpl)
+                Error = lta.__set__('FGen.FunctionParams',params)
+                
                 params = lta.__get__('FGen.FunctionArbs')  
-                #print params['FunctionConfig']['SampleRate']
                 
             except Exception as ex:
                 raise type(ex) ("Step Change Test Failure:"+ex.message)
@@ -169,7 +178,7 @@ class StdTests(object):
                 
         except Exception as ex:
             raise type(ex) ("Step Change Test Failure:"+ex.message)
-                
+                    
            
 
 # ------------------ MAIN SCRIPT ---------------------------------------------
