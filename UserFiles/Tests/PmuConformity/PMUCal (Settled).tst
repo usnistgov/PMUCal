@@ -2,7 +2,7 @@
 rngSync = "Dyn3 PMU Cal"
 
 [rngFGen]
-rngFGen = "PMU Cal"
+rngFGen = "PMUCAL (Settled)"
 
 [rngDigitizer]
 rngDigitizer = "PMU Cal (Finite)"
@@ -11,7 +11,7 @@ rngDigitizer = "PMU Cal (Finite)"
 rngSensor = "C37.118 PMU"
 
 [rngAnalysis]
-rngAnalysis = "PMU (Finite)"
+rngAnalysis = "PMU (Settled)"
 
 [btnHideMods]
 btnHideMods = "TRUE"
@@ -20,4 +20,4 @@ btnHideMods = "TRUE"
 Test Script = "PmuConformity\\MainScript.py"
 
 [Test File]
-Test File = "PMUCal (Finite).tst"
+Test File = "PmuConformity\\PMUCal (Settled).tst"

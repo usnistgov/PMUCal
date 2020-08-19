@@ -13,7 +13,9 @@
 		<Property Name="server.vi.callsEnabled" Type="Bool">true</Property>
 		<Property Name="server.vi.propertiesEnabled" Type="Bool">true</Property>
 		<Property Name="specify.custom.address" Type="Bool">false</Property>
-		<Item Name="Documentation" Type="Folder"/>
+		<Item Name="Documentation" Type="Folder">
+			<Item Name="PMUCal.rst" Type="Document" URL="../Documentation/PMUCal.rst"/>
+		</Item>
 		<Item Name="Framework" Type="Folder">
 			<Item Name="UserEvents" Type="Folder">
 				<Item Name="clUserEventDataType.ctl" Type="VI" URL="../Framework/UserEvents/clUserEventDataType.ctl"/>

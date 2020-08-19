@@ -4,6 +4,17 @@
 PMUCal Framework Documentation
 ==============================
 
+Scripting and Running Tests
+'''''''''''''''''''''''''''
+When a single test is run (either by clicking the "One Test" button or via a Python Script, The SSM is sent a "RunTest" command and the list of modules i load order (Sync, Digitizer,FGen,Sensor,Analaysis).  The SSM then opens each of the loaded .ini files in order and builds a script out of the "Scriptlets" in each of the files.
+
+The Scriptlets are run in the SSM.  When a "GetLoopScript" coomand is encountered, the SSM gathers all the [LoopScript] is loaded from .ini files in the order indicated by the parameters of the "GetLoopScript" call.
+
+If for some reason a test is aborted (either becuase the "Abort" button was clicked or as a reaction to an error).  The [AbortScript] is loaded from the .ini files (in order) and run by the SSM.  Aloowing for a clean exit from the test.
+
+
+
+
 PMU Conformity Configurations
 '''''''''''''''''''''''''''''
 
