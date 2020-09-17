@@ -162,7 +162,7 @@ class StdTests(object):
                 
                 
             while iteration > 0:
-                print ('iterations remaining = ', iteration )
+                print 'iterations remaining = ', iteration ', T0 = ',stepTime 
                 params['FunctionConfig']['T0'] = -float(stepTime)
                 try: 
                     Error = lta.__set__('FGen.FunctionArbs',params)
