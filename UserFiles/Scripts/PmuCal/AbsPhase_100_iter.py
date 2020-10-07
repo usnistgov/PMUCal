@@ -11,7 +11,7 @@ try:
     lta.connect()                   # connect to the Labview Host
 #---------------------Script code goes here------------------------------------
     UsrTimeout = lta.s.gettimeout()
-    count=100
+    count=20
     
     while (count > 0):
         timeout = 5

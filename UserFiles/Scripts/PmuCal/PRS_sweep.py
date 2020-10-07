@@ -1,4 +1,25 @@
 # -*- coding: utf-8 -*-
+# Performs ETS of the PRS swept from a delaytime of +.2 us to -.6 us
+# Configuration as follows:
+# Sync Plugin: AbsPhase:
+#       PPS: Slot 7, PFI0
+#       PRS: Slot 7, PFI1
+# FGen Plugin: AbsPhase_Voltage_Direct:
+#       Test Function .ini file: AbsPhase_Voltage_10V_Direct
+#       SampleRate: 50000
+# Digitizer Plugin:
+#       Sample Rate 100000 (may be changed)
+#       Record Size (same as sample rate)
+#       NumRecords 1
+# Sensor Plugin:
+#       C37.118 PMU (this may not matter at all but "none is throwing a error right now)
+#
+# Analysis Plugin: AbsPhase_10s (SaveWaveforms class)
+#       Duration: 1
+
+
+
+
 from lta import Lta
 import sys
 from lta_err import Lta_Error
@@ -27,10 +48,10 @@ try:
     freq_list = [50]
 
     for freq in freq_list:    
-        dlyTime = .2    # microseconds
+        dlyTime = .4    # microseconds
         
         
-        while (dlyTime > -.6):
+        while (dlyTime > -1):
               
 #            sleepTime = 5
 #            while (sleepTime > 0):

@@ -1,17 +1,17 @@
 [rngSync]
-rngSync = "Dyn3 PMU Cal"
+rngSync = "AbsPhase"
 
 [rngFGen]
-rngFGen = "PMU (SteadyState)"
+rngFGen = "AbsPhase_Voltage_10V_Direct"
 
 [rngDigitizer]
-rngDigitizer = "PMU (SteadyState)"
+rngDigitizer = "AbsPhase_Voltage"
 
 [rngSensor]
 rngSensor = "C37.118 PMU"
 
 [rngAnalysis]
-rngAnalysis = "PMU (SteadyState)"
+rngAnalysis = "AbsPhase_10s"
 
 [btnHideMods]
 btnHideMods = "TRUE"
@@ -20,4 +20,4 @@ btnHideMods = "TRUE"
 Test Script = "PmuConformity\\MainScript.py"
 
 [Test File]
-Test File = "PmuConformity\\PMUCal (SteadyState).tst"
+Test File = "AbsPhase_ETS_PRS.tst"
