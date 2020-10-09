@@ -159,7 +159,7 @@
 		</Item>
 		<Item Name="Config_class.lvlib" Type="Library" URL="../LV_Config_class/Config_class.lvlib"/>
 		<Item Name="Ini_lib.lvlib" Type="Library" URL="../LV_Ini/Ini_lib.lvlib"/>
-		<Item Name="kill_modal_dlg.vi" Type="VI" URL="/C/Users/PowerLab/Desktop/kill_modal_dlg.vi"/>
+		<Item Name="kill_modal_dlg.vi" Type="VI" URL="../../../Users/PowerLab/Desktop/kill_modal_dlg.vi"/>
 		<Item Name="Main.vi" Type="VI" URL="../Main.vi"/>
 		<Item Name="Queue.lvlib" Type="Library" URL="../Framework/Queue/Queue.lvlib"/>
 		<Item Name="Dependencies" Type="Dependencies">
