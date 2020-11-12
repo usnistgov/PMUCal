@@ -11,12 +11,12 @@ try:
     lta.connect()                   # connect to the Labview Host
 #---------------------Script code goes here------------------------------------
     UsrTimeout = lta.s.gettimeout()
-    count=20
-    
+    count=100
+
     while (count > 0):
         timeout = 5
         while(timeout > 0): 
-                time.sleep(1)
+                time.sleep(5)
                 locked = lta.__get__('Sync.LockStatus')
                 print count
                 if locked[None] == True:
