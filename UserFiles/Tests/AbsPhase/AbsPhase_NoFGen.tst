@@ -2,10 +2,10 @@
 rngSync = "AbsPhase"
 
 [rngFGen]
-rngFGen = "None"
+rngFGen = "none"
 
 [rngDigitizer]
-rngDigitizer = "AbsPhase_Current"
+rngDigitizer = "AbsPhase_Voltage"
 
 [rngSensor]
 rngSensor = "none"
@@ -20,4 +20,4 @@ btnHideMods = "TRUE"
 Test Script = "DefaultScript.py"
 
 [Test File]
-Test File = "AbPhase\\AbsPhase_NoFGen.tst"
+Test File = "AbsPhase\\AbsPhase_NoFGen.tst"
