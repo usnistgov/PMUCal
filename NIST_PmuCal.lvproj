@@ -157,6 +157,7 @@
 		<Item Name="UserFiles" Type="Folder" URL="../UserFiles">
 			<Property Name="NI.DISK" Type="Bool">true</Property>
 		</Item>
+		<Item Name="20201208153054_50f00.csv" Type="Document" URL="/C/Users/PowerLab/Documents/PMUCAL/Output/SteadyState/FreqRng/20201208153054_50f00.csv"/>
 		<Item Name="Config_class.lvlib" Type="Library" URL="../LV_Config_class/Config_class.lvlib"/>
 		<Item Name="Ini_lib.lvlib" Type="Library" URL="../LV_Ini/Ini_lib.lvlib"/>
 		<Item Name="kill_modal_dlg.vi" Type="VI" URL="../../../Users/PowerLab/Desktop/kill_modal_dlg.vi"/>

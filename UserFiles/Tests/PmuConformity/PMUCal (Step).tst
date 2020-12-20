@@ -5,7 +5,7 @@ rngSync = "Dyn3 PMU Cal"
 rngFGen = "PMU (Step)"
 
 [rngDigitizer]
-rngDigitizer = "PMU Cal (Finite)"
+rngDigitizer = "PMU (Step)"
 
 [rngSensor]
 rngSensor = "C37.118 PMU"
