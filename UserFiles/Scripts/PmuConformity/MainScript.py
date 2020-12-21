@@ -32,6 +32,18 @@ class StdTests(object):
     Dur - test duration (default 5 seconds)
     """
     
+    @staticmethod
+    def getParamIdx():
+        #useful indices# 
+        Xm=0;Fin=1;Pin=2;Fh=3;Ph=4;Kh=5;Fa=6;Ka=7;Fx=8;Kx=9;Rf=10;KaS=11;KxS=12;
+        return Xm,Fin,Pin,Fh,Ph,Kh,Fa,Ka,Fx,Kx,Rf,KaS,KxS
+        
+    @staticmethod
+    def getPhaseIdx():
+        VA=0;VB=1;VC=2;IA=3;IB=4;IC=5;
+        return VA,VB,VC,IA,IB,IC
+        
+    
       #constructor
     #def __init__(self,Fs,F0,Fsamp,Vnom,Inom,Duration,PMUclass,lta,ntries,secwait,ecode):
     def __init__(self,Duration,Config,Vnom,Inom,PMUclass):
@@ -57,6 +69,10 @@ class StdTests(object):
   
  # Initialize framework to default values 
     def set_init(self):
+                    #useful indices
+        Xm,Fin,Pin,Fh,Ph,kh,Fa,ka,Fx,Kx,Rf,KaS,kxS=self.getParamIdx()
+        VA,VB,VC,IA,IB,IC=self.getPhaseIdx()
+
         try:
             """ Sets initial default values to the framework"""
             print("Setting default params")
@@ -71,11 +87,7 @@ class StdTests(object):
             
             #Setting Waveform Params
             WfrmParams = lta.__get__('FGen.FunctionParams')
-            
-            #useful indices
-            Xm = 0; Fin = 1; Pin = 2; Fh = 3
-            VA = 0; VB = 1; VC = 2; IA = 3; IB = 4; IC = 5;
-            
+                        
             # default values
             WfrmParams[None][Xm][VA:VC+1] = float(self.Vnom)
             WfrmParams[None][Xm][IA:IC+1] = float(self.Inom)
@@ -136,51 +148,85 @@ class StdTests(object):
             
 # Step Changes
     def Step(self):
-        print("Performing Step Chage Tests")
+        print("Performing Step Change Tests")
         
-        stepTime = 1;
+        stepTime = .002;
         incr = .1/self.Config['F0']
-        iteration = 10 
-        KaS = 12; KxS = 13  #index to step parameters
         magAmpl = 0.1
         angleAmpl = 10
         self.Duration = float(2)
+        
+        Xm,Fin,Pin,Fh,Ph,kh,Fa,ka,Fx,Kx,Rf,KaS,KxS=self.getParamIdx()
+        VA,VB,VC,IA,IB,IC=self.getPhaseIdx()
+        
 
         try:        
             try: 
-                self.set_init()     # default function parameters
+                #self.set_init()     # default function parameters
                 
                 # Step index                    
                 params = lta.__get__('FGen.FunctionParams')
-                params[None][KaS][:] = float(magAmpl)
+                params[None][KxS][:] = float(magAmpl)
                 Error = lta.__set__('FGen.FunctionParams',params)
                 
-                params = lta.__get__('FGen.FunctionArbs')  
+                arbs = lta.__get__('FGen.FunctionArbs')  
                 
             except Exception as ex:
                 raise type(ex) ("Step Change Test Failure:"+ex.message)
                 
+#            iteration = 10
+#            while iteration > 0:
+#                print 'mag step iterations remaining = ', iteration 
+#                self.__iterStep__(arbs)
+#
+##                try: 
+##                    lta.s.settimeout(200)
+##                    Error = lta.__multirun__(self.ntries,self.secwait,self.ecode)
+##                    lta.s.settimeout(10)                       
+##                    print 'T0 = ',params['FunctionConfig']['T0']
+##                    params['FunctionConfig']['T0'] = float(params['FunctionConfig']['T0']+(stepTime))
+##                    Error = lta.__set__('FGen.FunctionArbs',params)                    
+##                except Exception as ex:
+##                    print (Error)
+##                    raise type(ex)(str(iteration)+ex.message) 
+#                    
+#                #stepTime += incr
+#                iteration += -1
                 
+            try:            
+                params[None][KxS][:] = float(0)
+                params[None][KaS][:] = float(angleAmpl) 
+                Error = lta.__set__('FGen.FunctionParams',params)
+                arbs['FunctionConfig']['T0'] = float(0)
+                Error = lta.__set__('FGen.FunctionArbs',arbs)
+            except Exception as ex:
+                print(Error)
+                raise type(ex)(ex.message) 
+           
+            iteration = 10            
             while iteration > 0:
-                print 'iterations remaining = ', iteration ', T0 = ',stepTime 
-                params['FunctionConfig']['T0'] = -float(stepTime)
-                try: 
-                    Error = lta.__set__('FGen.FunctionArbs',params)
-                    lta.s.settimeout(200)
-                    Error = lta.__multirun__(self.ntries,self.secwait,self.ecode)
-                    lta.s.settimeout(10)                       
-                except Exception as ex:
-                    print (Error)
-                    raise type(ex)(str(iteration)+ex.message) 
-                    
-                stepTime += incr
+                print 'angle step iterations remaining = ', iteration 
+                self.__iterStep__(arbs)  
                 iteration += -1
                 
         except Exception as ex:
             raise type(ex) ("Step Change Test Failure:"+ex.message)
                     
-           
+   # one iteration of the step test
+    def __iterStep__(self,arbs):
+        stepTime = .1/Fs
 
+        try: 
+           lta.s.settimeout(200)
+           Error = lta.__multirun__(self.ntries,self.secwait,self.ecode)
+           lta.s.settimeout(10)                       
+           print 'T0 = ',arbs['FunctionConfig']['T0']
+           arbs['FunctionConfig']['T0'] = float(arbs['FunctionConfig']['T0']+(stepTime))
+           Error = lta.__set__('FGen.FunctionArbs',arbs)                    
+        except Exception as ex:
+           print (Error)
+           raise type(ex)(ex.message) 
+           
 # ------------------ MAIN SCRIPT ---------------------------------------------
 #------------------- following code must be in all scripts--------------------
 lta = Lta("127.0.0.1",60100)    # all scripts must create  an Lta object
