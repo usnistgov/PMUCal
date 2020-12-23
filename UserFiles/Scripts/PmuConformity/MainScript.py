@@ -150,8 +150,9 @@ class StdTests(object):
     def Step(self):
         print("Performing Step Change Tests")
         
-        stepTime = .002;
-        incr = .1/self.Config['F0']
+        #stepTime = .002;
+        numSteps = 10;
+        stepTime = .1/self.Config['F0']
         magAmpl = 0.1
         angleAmpl = 10
         self.Duration = float(2)
@@ -174,30 +175,17 @@ class StdTests(object):
             except Exception as ex:
                 raise type(ex) ("Step Change Test Failure:"+ex.message)
                 
-#            iteration = 10
+#            iteration = numSteps
 #            while iteration > 0:
 #                print 'mag step iterations remaining = ', iteration 
 #                self.__iterStep__(arbs)
-#
-##                try: 
-##                    lta.s.settimeout(200)
-##                    Error = lta.__multirun__(self.ntries,self.secwait,self.ecode)
-##                    lta.s.settimeout(10)                       
-##                    print 'T0 = ',params['FunctionConfig']['T0']
-##                    params['FunctionConfig']['T0'] = float(params['FunctionConfig']['T0']+(stepTime))
-##                    Error = lta.__set__('FGen.FunctionArbs',params)                    
-##                except Exception as ex:
-##                    print (Error)
-##                    raise type(ex)(str(iteration)+ex.message) 
-#                    
-#                #stepTime += incr
 #                iteration += -1
                 
             try:            
                 params[None][KxS][:] = float(0)
                 params[None][KaS][:] = float(angleAmpl) 
                 Error = lta.__set__('FGen.FunctionParams',params)
-                arbs['FunctionConfig']['T0'] = float(0)
+                arbs['FunctionConfig']['T0'] = float(stepTime*numSteps)
                 Error = lta.__set__('FGen.FunctionArbs',arbs)
             except Exception as ex:
                 print(Error)
@@ -221,7 +209,7 @@ class StdTests(object):
            Error = lta.__multirun__(self.ntries,self.secwait,self.ecode)
            lta.s.settimeout(10)                       
            print 'T0 = ',arbs['FunctionConfig']['T0']
-           arbs['FunctionConfig']['T0'] = float(arbs['FunctionConfig']['T0']+(stepTime))
+           arbs['FunctionConfig']['T0'] = float(arbs['FunctionConfig']['T0']-(stepTime))
            Error = lta.__set__('FGen.FunctionArbs',arbs)                    
         except Exception as ex:
            print (Error)
