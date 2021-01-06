@@ -35,8 +35,8 @@ class StdTests(object):
     @staticmethod
     def getParamIdx():
         #useful indices# 
-        Xm=0;Fin=1;Pin=2;Fh=3;Ph=4;Kh=5;Fa=6;Ka=7;Fx=8;Kx=9;Rf=10;KaS=11;KxS=12;
-        return Xm,Fin,Pin,Fh,Ph,Kh,Fa,Ka,Fx,Kx,Rf,KaS,KxS
+        Xm=0;Fin=1;Pin=2;Fh=3;Ph=4;Kh=5;Fa=6;Ka=7;Fx=8;Kx=9;Rf=10;KaS=11;KxS=12;KfS=13;KrS=14;
+        return Xm,Fin,Pin,Fh,Ph,Kh,Fa,Ka,Fx,Kx,Rf,KaS,KxS,KfS,KrS
         
     @staticmethod
     def getPhaseIdx():
@@ -70,7 +70,7 @@ class StdTests(object):
  # Initialize framework to default values 
     def set_init(self):
                     #useful indices
-        Xm,Fin,Pin,Fh,Ph,kh,Fa,ka,Fx,Kx,Rf,KaS,kxS=self.getParamIdx()
+        Xm,Fin,Pin,Fh,Ph,kh,Fa,ka,Fx,Kx,Rf,KaS,KxS,KfS,KrS=self.getParamIdx()
         VA,VB,VC,IA,IB,IC=self.getPhaseIdx()
 
         try:
@@ -155,9 +155,10 @@ class StdTests(object):
         stepTime = .1/self.Config['F0']
         magAmpl = 0.1
         angleAmpl = 10
+        freqStep = 1
         self.Duration = float(2)
         
-        Xm,Fin,Pin,Fh,Ph,kh,Fa,ka,Fx,Kx,Rf,KaS,KxS=self.getParamIdx()
+        Xm,Fin,Pin,Fh,Ph,kh,Fa,ka,Fx,Kx,Rf,KaS,KxS,KfS,KrS=self.getParamIdx()
         VA,VB,VC,IA,IB,IC=self.getPhaseIdx()
         
 
@@ -181,11 +182,33 @@ class StdTests(object):
 #                self.__iterStep__(arbs)
 #                iteration += -1
                 
+#            try:            
+#                params[None][KxS][:] = float(0)
+#                params[None][KaS][:] = float(angleAmpl) 
+#                Error = lta.__set__('FGen.FunctionParams',params)
+#                arbs['FunctionConfig']['T0'] = float(0.5*stepTime*numSteps)
+#                Error = lta.__set__('FGen.FunctionArbs',arbs)
+#            except Exception as ex:
+#                print(Error)
+#                raise type(ex)(ex.message) 
+#           
+#            iteration = 10            
+#            while iteration > 0:
+#                print 'angle step iterations remaining = ', iteration 
+#                self.__iterStep__(arbs)  
+#                iteration += -1
+#                
+#        except Exception as ex:
+#            raise type(ex) ("Step Change Test Failure:"+ex.message)
+            
+            
+            # frequency step            
             try:            
                 params[None][KxS][:] = float(0)
-                params[None][KaS][:] = float(angleAmpl) 
+                params[None][KaS][:] = float(0) 
+                params[None][KfS][:] = float(freqStep)
                 Error = lta.__set__('FGen.FunctionParams',params)
-                arbs['FunctionConfig']['T0'] = float(stepTime*numSteps)
+                arbs['FunctionConfig']['T0'] = float(0.5*stepTime*numSteps)
                 Error = lta.__set__('FGen.FunctionArbs',arbs)
             except Exception as ex:
                 print(Error)
