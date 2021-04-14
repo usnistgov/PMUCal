@@ -48,11 +48,10 @@ try:
     freq_list = [50]
 
     for freq in freq_list:    
-        dlyTime = .4    # microseconds
-        
+#        dlyTime = .6    # microseconds
+        dlyTime = .3
         
         while (dlyTime > -1):
-              
 #            sleepTime = 5
 #            while (sleepTime > 0):
 #                print sleepTime            
@@ -100,7 +99,11 @@ try:
             if locked[None] != True:
                 raise Exception ('Sync module is not locked')
                 
-            dlyTime = dlyTime - 0.05
+            #dlyTime = dlyTime - 0.05
+            dlyTime = dlyTime - 0.01
+            if (dlyTime == .05):
+                dlyTime = -.05
+                
 
 
 #------------------all scripts should send their errors to labview------------

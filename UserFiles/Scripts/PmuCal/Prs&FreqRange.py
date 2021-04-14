@@ -22,15 +22,15 @@ try:
     phase = 2
 
 
-    freq_list = [5000, 2000, 1000, 500, 200, 100, 80, 60, 50, 40] 
+    freq_list = [5000, 2500, 1000, 500, 200, 100, 50, 40] 
 
     for freq in freq_list:    
         print 'freq: ',freq,'Hz'
         time.sleep(2.5)
     
-        fcnParams = lta.__get__('FGen.FunctionParams')
-        fcnParams[None][frequency] = freq
-        lta.__set__('FGen.FunctionParams',fcnParams)
+        #fcnParams = lta.__get__('FGen.FunctionParams')
+        #fcnParams[None][frequency] = freq
+        #lta.__set__('FGen.FunctionParams',fcnParams)
         
         ClkProperties=lta.__get__('Sync.ClockProperties')
         for element in ClkProperties[None]:
@@ -41,19 +41,24 @@ try:
 
         lta.__set__('Sync.ClockProperties',ClkProperties)
 
-        timeout = 5        
-        while(timeout > 0): 
-            time.sleep(10)
-            locked = lta.__get__('Sync.LockStatus')
-            if locked[None] == True:
-                lta.s.settimeout(1000)               
-                lta.__run__() 
-                lta.s.settimeout(UsrTimeout)
-                break
-            timeout = timeout - 1
-            
-        if locked[None] != True:
-            raise Exception ('Sync module is not locked')
+        count = 20 
+        while (count > 0):
+            print 'iter: ',count
+            timeout = 5        
+            while(timeout > 0): 
+                time.sleep(10)
+                locked = lta.__get__('Sync.LockStatus')
+                if locked[None] == True:
+                    lta.s.settimeout(1000)               
+                    lta.__run__() 
+                    lta.s.settimeout(UsrTimeout)
+                    break
+                timeout = timeout - 1
+                
+                
+            if locked[None] != True:
+                raise Exception ('Sync module is not locked')                    
+            count = count - 1
     
 
 #------------------all scripts should send their errors to labview------------

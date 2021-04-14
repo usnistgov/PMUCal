@@ -42,14 +42,15 @@ try:
     waveform = 5
 
 
-#    freq_list = [5000, 2000, 1000, 500, 200, 100, 80, 60, 50, 40] 
+    freq_list = [5000, 2500, 1000, 500, 200, 100, 50, 40] 
+#    freq_list = [5000, 2500, 1000, 500, 200, 100, 40]
 #    freq_list = [200, 180, 160, 140, 120, 100, 80, 70, 60, 50, 40] 
 #    freq_list = [200, 160, 100, 80, 50, 40] 
-    freq_list = [50]
+#    freq_list = [1000]
 
     for freq in freq_list:    
-        dlyTime = .4    # microseconds
-        
+        dlyTime = .6    # microseconds
+        #dlyTime =  -.05   # microseconds
         
         while (dlyTime > -1):
               
@@ -91,11 +92,19 @@ try:
                     break
                 timeout = timeout - 1
                 
+            dlyTime = dlyTime - 0.05
+#            if (dlyTime == .04):
+#                dlyTime = 0
+#            elif (dlyTime == -0.1):
+#               dlyTime = -0.05
+                                
             if locked[None] != True:
                 raise Exception ('Sync module is not locked')
                 
-            dlyTime = dlyTime - 0.05
-
+            #dlyTime = dlyTime - 0.05
+ 
+                
+                 
 
 #------------------all scripts should send their errors to labview------------
 except Exception as ex:

@@ -591,6 +591,7 @@
 				<Item Name="DWDT Waveform Duration.vi" Type="VI" URL="/&lt;vilib&gt;/Waveform/DWDTOps.llb/DWDT Waveform Duration.vi"/>
 				<Item Name="Error Cluster From Error Code.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Cluster From Error Code.vi"/>
 				<Item Name="Error Code Database.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error Code Database.vi"/>
+				<Item Name="Error to Warning.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Error to Warning.vi"/>
 				<Item Name="ErrWarn.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/ErrWarn.ctl"/>
 				<Item Name="eventvkey.ctl" Type="VI" URL="/&lt;vilib&gt;/event_ctls.llb/eventvkey.ctl"/>
 				<Item Name="ex_CorrectErrorChain.vi" Type="VI" URL="/&lt;vilib&gt;/express/express shared/ex_CorrectErrorChain.vi"/>
@@ -760,8 +761,11 @@
 			<Item Name="_ChannelSupport.lvlib" Type="Library" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/_ChannelSupport.lvlib"/>
 			<Item Name="AcPwrModule.lvlib" Type="Library" URL="../Modules/AcPwr/AcPwrModule/AcPwrModule.lvlib"/>
 			<Item Name="AcPwrShared.lvlib" Type="Library" URL="../Modules/AcPwr/AcPwrShared/AcPwrShared.lvlib"/>
+			<Item Name="byte array to number.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/byte array to number.vi"/>
 			<Item Name="ChannelProbePositionAndTitle.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbePositionAndTitle.vi"/>
 			<Item Name="ChannelProbeWindowStagger.vi" Type="VI" URL="/&lt;resource&gt;/ChannelSupport/_ChannelSupport/ChannelProbeWindowStagger.vi"/>
+			<Item Name="CTL - SNMP Types.ctl" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/CTL - SNMP Types.ctl"/>
+			<Item Name="Get snmp Item(s).vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/Get snmp Item(s).vi"/>
 			<Item Name="ivi.dll" Type="Document" URL="ivi.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
@@ -794,8 +798,33 @@
 			<Item Name="niTClk.dll" Type="Document" URL="niTClk.dll">
 				<Property Name="NI.PreserveRelativePath" Type="Bool">true</Property>
 			</Item>
+			<Item Name="Parse SNMP Packet Header.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/Parse SNMP Packet Header.vi"/>
+			<Item Name="Parse SNMP Tuple.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/Parse SNMP Tuple.vi"/>
 			<Item Name="ScopeModule.lvlib" Type="Library" URL="../Modules/Scope/ScopeModule/ScopeModule.lvlib"/>
 			<Item Name="ScopePlugins.lvlib" Type="Library" URL="../Modules/Scope/ScopePlugins/ScopePlugins.lvlib"/>
+			<Item Name="ScopeShared.lvlib" Type="Library" URL="../Modules/Scope/ScopeShared/ScopeShared.lvlib"/>
+			<Item Name="Sequence length convert.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/Sequence length convert.vi"/>
+			<Item Name="Set snmp Item(s).vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/Set snmp Item(s).vi"/>
+			<Item Name="SNMP ASCII Hex String To Binary String.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP ASCII Hex String To Binary String.vi"/>
+			<Item Name="SNMP Build Get Request Packet.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Build Get Request Packet.vi"/>
+			<Item Name="SNMP Build Get Sequence.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Build Get Sequence.vi"/>
+			<Item Name="SNMP Build OID.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Build OID.vi"/>
+			<Item Name="SNMP Build Set Request Packet.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Build Set Request Packet.vi"/>
+			<Item Name="SNMP Build Set Sequence.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Build Set Sequence.vi"/>
+			<Item Name="SNMP Byte Array to Int32.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Byte Array to Int32.vi"/>
+			<Item Name="SNMP Close Port.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Close Port.vi"/>
+			<Item Name="SNMP Encode SubID.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Encode SubID.vi"/>
+			<Item Name="SNMP Get Request.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Get Request.vi"/>
+			<Item Name="SNMP Get Response.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Get Response.vi"/>
+			<Item Name="SNMP OID to String.VI" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP OID to String.VI"/>
+			<Item Name="SNMP Open Port.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Open Port.vi"/>
+			<Item Name="SNMP Parse Sequence Data.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Parse Sequence Data.vi"/>
+			<Item Name="SNMP Parse SNMP Packet.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Parse SNMP Packet.vi"/>
+			<Item Name="SNMP Set Request.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Set Request.vi"/>
+			<Item Name="SNMP String to Smallest Int Array.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP String to Smallest Int Array.vi"/>
+			<Item Name="SNMP String to Type.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP String to Type.vi"/>
+			<Item Name="SNMP Type Num to Type String.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Type Num to Type String.vi"/>
+			<Item Name="SNMP Type to String.vi" Type="VI" URL="../Modules/Sensor/SensorPlugins/RoomAlert/snmp communication.llb/SNMP Type to String.vi"/>
 			<Item Name="Tag-bool.lvlib" Type="Library" URL="/&lt;extravilib&gt;/ChannelInstances/Tag-bool.lvlib"/>
 		</Item>
 		<Item Name="Build Specifications" Type="Build"/>
