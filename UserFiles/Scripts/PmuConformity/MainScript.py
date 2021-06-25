@@ -130,6 +130,8 @@ class StdTests(object):
                 raise ex
                                 
             while freq<fStop: 
+                tic =time.clock()
+                time.sleep(5.0)
                 print 'freq = ',freq
                 WfrmParams[None][Fin][:] = float(freq)
                 try:
@@ -141,6 +143,15 @@ class StdTests(object):
                     print (Error)
                     raise type(ex)(str(freq)+ex.message) 
                     
+                # wait for the calibrator calibration system,    
+                toc = time.clock()    
+                while (toc - tic)<30:
+                    time.sleep(0.1)
+                    toc = time.clock()    
+                
+                
+                print('Duration = ',(toc - tic))
+    
                 freq += incr
                              
         except Exception as ex:
@@ -150,7 +161,7 @@ class StdTests(object):
     def MagRange(self):
         print ("Performing Magnitude Range Tests") 
         Xm,Fin,Pin,Fh,Ph,Kh,Fa,Ka,Fx,Kx,Rf,KaS,KxS,KfS,KrS=self.getParamIdx()
-        incr = 0.1;
+        incr = 0.1
         iMag = 0.1  
         vMag = 0.1
         if self.PMUclass != 'M':
@@ -166,7 +177,9 @@ class StdTests(object):
             except Exception as ex:
                 raise ex
                 
-            while iMag < 2.1:
+            #while iMag < 2.1:
+            while iMag < 1.5:
+                
                 #print ('iMag = ',iMag, 'VMag = ',vMag)                
                 WfrmParams[None][Xm][0:3] = float(vMag)*A[0:3]
                 WfrmParams[None][Xm][3:7] = float(iMag)*A[3:7]
@@ -480,20 +493,20 @@ try:
 
     UsrTimeout = lta.s.gettimeout()
     
-    Duration = 1    # Analysis.Duration
+    Duration = 2    # Analysis.Duration
     
     # Analysis.Config
     Config = OrderedDict()      
     Config['F0'] = np.uint32(50) 
-    Config['SettlingTime']= 0.0
+    Config['SettlingTime']= 1.0
     Config['AnalysisCycles'] = float(6.0)
-    Config['SampleRate'] = float(50000)
+    Config['SampleRate'] = float(48000)
     Config['NumChannels']= np.uint32(6)   
     
    
     Fs_ini = 60.  #doesnt matter this default value, to be changed later
     #Fs_list = {60:[10,12,15,20,30,60],50:[10,25,50], 63:[10]} #63 inserted for testing
-    FSamp = 9600.
+    FSamp = 48000.
     Vnom = 70.
     Inom = 5.
     PMUclass = "M"
@@ -515,8 +528,8 @@ try:
                  #t.MagRange, 
                  #t.Harm, 
                  #t.IHarm,
-                 t.MeasBand, 
-                 #t.RampFreq, 
+                 #t.MeasBand, 
+                 t.RampFreq, 
                  #t.Step ,
                  #t.RepLatency
                  t.Pass]     
