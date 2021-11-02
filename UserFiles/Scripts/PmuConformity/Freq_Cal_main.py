@@ -6,6 +6,7 @@ from lta_err import Lta_Error
 from collections import OrderedDict
 import numpy as np
 
+
 class StdTests(object):
     """This object is intended to be a set of standard tests that shall follow the test suit specification, 
     whose methods are capable of setting parameters and sending messages to actually run them through a 
@@ -266,9 +267,9 @@ class StdTests(object):
             while iFreq > 10:
                 
                 # PMU Standard increments
-                iFreq = self.Config['F0'] - self.Fs/2 - (0.1 * 2**incr)
+                #iFreq = self.Config['F0'] - self.Fs/2 - (0.1 * 2**incr)
                 # IEC frequency TR increments: 0.5 Hz
-                #iFreq = self.Config['F0'] - 5 - (0.5*incr)
+                iFreq = self.Config['F0'] - 5 - (0.5*incr)
                 
                 if iFreq < 10:
                     iFreq = 10
@@ -282,9 +283,9 @@ class StdTests(object):
             while iFreq < 2 * self.Config['F0']:
                 
                 # PMU Standard increments
-                iFreq = self.Config['F0'] + self.Fs/2 + (0.1 * 2**incr)
+                #iFreq = self.Config['F0'] + self.Fs/2 + (0.1 * 2**incr)
                 # IEC frequency TR increments: 0.5 Hz
-                #iFreq = self.Config['F0'] + 5 + (0.5*incr)
+                iFreq = self.Config['F0'] + 5 + (0.5*incr)
                 
                 if iFreq > 2 * self.Config['F0']:
                     iFreq = 2 * self.Config['F0']
@@ -310,23 +311,25 @@ class StdTests(object):
             raise type(ex) ("Interharmonic Test Failure:"+ex.message)
                 
 
- # Measurement bandwidth (modulation)    
+# Measurement bandwidth (modulation)
+#
+#   Modfication of the PMU test to test the operating range of frequency instruments
+# First ask the user for the maximum operating range frequency and the maximum ROCOF and compute 
+# fmax and kmax. 
+# then hold fm = fmax and vary km logarithmically (with more values near the top.) 
+# finally, hold km = kmax and vary fm logarithmically (with more values near the top.)
+# 
     def MeasBand(self):
-        print("Performing Measurement Bandwidth (Modulation) Tests")
+        from math import pi
+        from math import log10        
         
-        # Range of modulation frequency
-        if self.PMUclass == "M":
-            Fmax = 5.
-            if self.Fs/5 < 5:
-                Fmax = self.Fs/5
-        elif self.PMUclass == "P":
-            Fmax = 2.
-            if self.Fs/10 < 2:
-                Fmax = self.Fs/10
-        else:
-            raise Exception("Measurement Bandwidth Test Error: Unsupported PMU class" % self.PMUclass)
- 
+        FreqMax = input("Input the maximum of the frequency operating range: ")
+        RocofMax = input("Input the maximum ROCOF allowed by the instrument: ")
         
+        Fmax = RocofMax/((2*pi)*(FreqMax - 50))
+        Kmax = ((2*pi)*(FreqMax - 50)**2)/RocofMax
+        print "Fmax = %2.2f, Kmax = %2.2f" % (Fmax,Kmax)
+                   
         # get the parameter indices        
         _,_,_,_,_,_,Fa,Ka,Fx,Kx,_,_,_,_,_=self.getParamIdx()
         #VA,VB,VC,IA,IB,IC=self.getPhaseIdx()               
@@ -344,38 +347,44 @@ class StdTests(object):
         fmod = range(1,int(Fmax*10),2)+[int(Fmax*10)]
         
         # loop through the range of frequencies        
-        for f in fmod:
-            print "Fmod = ", float(f)/10
-            WfrmParams[None][Fx][:] = float(f)/10
-            
-            # set the waveform params            
-            try:
-                Error = lta.__set__('FGen.FunctionParams',WfrmParams)
-            except Exception as ex:
-                print Error
-                raise type(ex)("Measurement Bandwidth Test - unable to set Waveform Parameters . " +ex.message)
-            
-            # run one test
-            try:
-                lta.s.settimeout(200)                       
-                Error = lta.__multirun__(self.ntries,self.secwait,self.ecode)
-                lta.s.settimeout(10)                            
-                                                                           
-            except Exception as ex:
-                print (Error)
-                raise type(ex)("Kx="+str(WfrmParams[None][Kx][1]) 
-                                    +", fmod="+ str(f)+"Hz, Fs="+str(self.Fs)+". "+ex.message+ex.message) 
+#        for f in fmod:
+#            print "Fmod = ", float(f)/10
+#            WfrmParams[None][Fx][:] = float(f)/10
+#            
+#            # set the waveform params            
+#            try:
+#                Error = lta.__set__('FGen.FunctionParams',WfrmParams)
+#            except Exception as ex:
+#                print Error
+#                raise type(ex)("Measurement Bandwidth Test - unable to set Waveform Parameters . " +ex.message)
+#            
+#            # run one test
+#            try:
+#                lta.s.settimeout(200)                       
+#                Error = lta.__multirun__(self.ntries,self.secwait,self.ecode)
+#                lta.s.settimeout(10)                            
+#                                                                           
+#            except Exception as ex:
+#                print (Error)
+#                raise type(ex)("Kx="+str(WfrmParams[None][Kx][1]) 
+#                                    +", fmod="+ str(f)+"Hz, Fs="+str(self.Fs)+". "+ex.message+ex.message) 
                                     
                                     
         WfrmParams[None][Fx][:] = float(0)
         WfrmParams[None][Kx][:] = float(0)
         
-        # Phase Modulation Tests
-        print "Phase Modulation Tests"
-        WfrmParams[None][Ka][:] = float(0.1)
-        for f in fmod:
-            print "Fmod = ", float(f)/10
-            WfrmParams[None][Fa][:] = float(f)/10
+        # Frequency Modulation Tests
+        # two phases of this test:
+        #   Phase 1:  Hold the fm constant at Fmax and vary Km
+        #   Phase 2: Hold the km constant at Kmax and vary fm
+        mults = list(log10(0.5*(i+2)) for i in range(1,19))   # we are going to iterate over this twice    
+        
+        
+        print "Frequency Modulation Tests, Phase 1, Km constant and vary Fm"
+        WfrmParams[None][Ka][:] = float(Kmax)
+        for m in mults:
+            print "Fmod = ", float(Fmax)*m
+            WfrmParams[None][Fa][:] = float(Fmax)*m
             
             # set the waveform params            
             try:
@@ -393,7 +402,32 @@ class StdTests(object):
             except Exception as ex:
                 print (Error)
                 raise type(ex)("Ka="+str(WfrmParams[None][Ka][1]) 
-                                    +", fmod="+ str(f)+"Hz, Fs="+str(self.Fs)+". "+ex.message+ex.message) 
+                                    +", fmod="+ str(Fmax*m)+"Hz, Fs="+str(self.Fs)+". "+ex.message+ex.message) 
+           
+        print "Frequency Modulation Tests, Phase 2, Fm constant and vary Km"
+        WfrmParams[None][Fa][:] = float(Fmax)
+        for m in mults:
+            print "Kmod = ", float(Kmax)*m
+            WfrmParams[None][Ka][:] = float(Kmax)*m
+            
+            # set the waveform params            
+            try:
+                Error = lta.__set__('FGen.FunctionParams',WfrmParams)
+            except Exception as ex:
+                print Error
+                raise type(ex)("Measurement Bandwidth Test - unable to set Waveform Parameters . " +ex.message)
+            
+            # run one test
+            try:
+                lta.s.settimeout(200)                       
+                Error = lta.__multirun__(self.ntries,self.secwait,self.ecode)
+                lta.s.settimeout(10)                            
+                                                                           
+            except Exception as ex:
+                print (Error)
+                raise type(ex)("Fa="+str(WfrmParams[None][Fa][1]) 
+                                    +", kmod="+ str(Kmax*m)+"Hz, Fs="+str(self.Fs)+". "+ex.message+ex.message) 
+           
            
 
 # Step Changes
